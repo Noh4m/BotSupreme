@@ -7,24 +7,7 @@ from selenium import webdriver
 from config import config
 import time
 
-def timeme(method):
-    def wrapper(*args, **kw):
-        startTime = int(round(time.time() * 1000))
-        result = method(*args, **kw)
-        endTime = int(round(time.time() * 1000))
-        print((endTime - startTime)/1000, 's')
-        return result
-    return wrapper
 
-
-
-
-
-
-
-
-
-@timeme
 def order():
     # add to cart
     add_to_cart = driver.find_element_by_xpath('//*[@id="add-remove-buttons"]/input')
