@@ -1,3 +1,8 @@
+#This script was made by Noham Hirep : https://github.com/Noh4m/BotSupreme
+#This is a script to make an automatic purchase on the Supreme site made in python and with the help of selinium,
+#is my first python project from A to Z and i am happy to show it to you
+
+
 from selenium import webdriver
 from config import config
 import time
@@ -11,9 +16,7 @@ def timeme(method):
         return result
     return wrapper
 
-# will cookies improve load time?
-options = webdriver.ChromeOptions()
-options.add_argument('user-data-dir=www.supremenewyork.com')
+
 
 
 
@@ -37,7 +40,7 @@ def order():
     driver.find_element_by_xpath('//*[@id="order_billing_name"]').send_keys(config['name'])
     driver.find_element_by_xpath('//*[@id="order_email"]').send_keys(config['email'])
     driver.find_element_by_xpath('//*[@id="order_tel"]').send_keys(config['phone'])
-    driver.find_element_by_xpath('//*[@id="bo"]').get_property(config['adresse'])
+    driver.find_element_by_xpath('//*[@id="bo"]').send_keys(config['adresse'])
     driver.find_element_by_xpath('//*[@id="order_billing_city"]').send_keys(config['city'])
     driver.find_element_by_xpath('//*[@id="order_billing_zip"]').send_keys(config['zipCode'])
 # Select Contry
